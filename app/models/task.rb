@@ -12,7 +12,9 @@ class Task < ActiveRecord::Base
       u.asignadoa = var2
       u.creado= Time.now
       u.status="Incompleto"
+
     end
+task.save
   end
 
 
@@ -22,8 +24,8 @@ class Task < ActiveRecord::Base
   end
 
   def update(var)
-    user = User.find_by(id:var)
-    user.status = 'Completo'
-    user.save
+    task = Task.find_by(id:var)
+    task.status = 'Completo'
+    task.save
   end
 end

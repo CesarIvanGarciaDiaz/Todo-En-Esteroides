@@ -2,7 +2,7 @@ class TasksView
 	# Recuerda que la única responsabilidad de la vista es desplegar data al usuario
 
 	def index(valor)
-	puts	valor.to_s
+	p	valor
 	end
 
   def create
