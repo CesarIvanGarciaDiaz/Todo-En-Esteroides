@@ -5,18 +5,15 @@ class Task < ActiveRecord::Base
     Task.all
   end
 
-
   def create(var1,var2)
     task = Task.new do |u|
-      u.nombredetarea =var1
-      u.asignadoa = var2
-      u.creado= Time.now
+      u.asignadoa = var1
+      u.nombredetarea =var2
+      u.creado= Time.now.strftime("%Y-%m-%d")
       u.status="Incompleto"
-
     end
-task.save
+    task.save
   end
-
 
   def delete(var)
     task = Task.find_by(id: var)

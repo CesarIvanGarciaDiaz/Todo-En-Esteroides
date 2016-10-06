@@ -3,8 +3,8 @@ class CreateTasks < ActiveRecord::Migration
     create_table :tasks do |t|
       t.string :nombredetarea
       t.string :asignadoa
-      t.time :creado
-      t.string :status      
+      t.date :creado
+      t.string :status
     end
   end
 end
