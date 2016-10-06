@@ -4,27 +4,26 @@ class TasksController
     @args=args
     @model = Task.new
     @view = TasksView.new
-    index
+    #index
+    execute
   end
 
   def index
     task = @model.index
     p task
   end
+
+  def execute
+    case @args[0]
+          when "index"
+            index
+          when "add"
+            add
+    end
+  end
 end
 
 
 #@view = TasksView.new
-# prueb = TasksController.new("dato")
-# prueb.index
+
 # TasksController.index
-# case @args
-#       when "index"
-#         TasksController.index
-#       when "add"
-#         add
-#       when "delete"
-#         delete
-#       when "complete"
-#         complete
-# end
